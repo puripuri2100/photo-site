@@ -18,11 +18,10 @@
                   <v-img
                     :src="item.photo_src"
                     :lazy-src="item.photo_lazy_src"
-                    alt = "item.alt"
+                    :alt = "item.alt"
                     max-height="200"
                     contain
-                  >
-                  </v-img>
+                  ></v-img>
                 </keep-alive>
               </v-row>
               <v-row justify="center" align="center" class="pa-5">

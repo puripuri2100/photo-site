@@ -11,18 +11,14 @@
       :to="{name: 'groups-id', params:{id: item.group_id}}"
       >
         <v-row justify="center" align="center" class="pa-5">
-          <!-- head_idの更新を行っている -->
-          <span v-if="head_id = item.photo_id_list[0]"></span>
-          
           <keep-alive>
             <v-img
-              :src="search_photo_by_id"
-              :lazy-src="search_lazy_photo_by_id"
-              alt = "item.title"
+              :src="search_photo_by_id(item.photo_id_list[0])"
+              :lazy-src="search_lazy_photo_by_id(item.photo_id_list[0])"
+              :alt = "item.title"
               max-height="200"
               contain
-            >
-            </v-img>
+            ></v-img>
           </keep-alive>
         </v-row>
         <v-row justify="center" align="center" class="pa-5">
@@ -46,8 +42,6 @@
 </template>
 
 <script>
-//const groupData = () => import('../static/group_data.json');
-//const photoData = () => import('../static/photo_data.json');
 import groupData from '../static/group_data.json'
 import photoData from '../static/photo_data.json'
 
@@ -55,19 +49,17 @@ export default {
   group_id: 'IndexPage',
   data() {
     return {
-      // 初期化された「グループの先頭を」
-      head_id: '',
       group_list: groupData,
       photo_list: photoData
 
     }
   },
-  computed: {
-    search_photo_by_id : function () {
-      return (this.photo_list.find(v => v.photo_id === this.head_id)).photo_src
+  methods: {
+    search_photo_by_id(head_id) {
+      return (this.photo_list.find(v => v.photo_id === head_id)).photo_src
     },
-    search_lazy_photo_by_id : function () {
-      return (this.photo_list.find(v => v.photo_id === this.head_id)).photo_lazy_src
+    search_lazy_photo_by_id(head_id) {
+      return (this.photo_list.find(v => v.photo_id === head_id)).photo_lazy_src
     }
   }
 }

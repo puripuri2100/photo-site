@@ -7,13 +7,12 @@
             <v-img
               :src="photo_data.photo_src"
               :lazy-src="photo_data.photo_lazy_src"
-              alt = "photo_data.alt"
+              :alt = "photo_data.alt"
               max-height="600"
               max-width="600"
               contain
               class="pa-20"
-            >
-            </v-img>
+            ></v-img>
           </keep-alive>
           <v-row>
             <v-col justify="start" align="start">
