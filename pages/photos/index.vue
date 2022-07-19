@@ -12,8 +12,8 @@
         <v-row justify="center" align="center">
           <keep-alive>
             <v-img
-              :src="item.photo_src"
-              :lazy-src="item.photo_src"
+              :src="require ('@/assets' + item.photo_src)"
+              :lazy-src="require ('@/assets' + item.photo_src)"
               :alt = "item.alt"
               max-height="200"
               contain
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import photoData from '../../static/photo_data.json'
+import photoData from '@/assets/photo_data.json'
 
 export default {
   group_id: 'IndexPage',

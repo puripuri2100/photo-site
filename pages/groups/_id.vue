@@ -16,8 +16,8 @@
               <v-row justify="center" align="center" class="pa-5">
                 <keep-alive>
                   <v-img
-                    :src="item.photo_src"
-                    :lazy-src="item.photo_lazy_src"
+                    :src="require ('@/assets' + item.photo_src)"
+                    :lazy-src="require ('@/assets' + item.photo_lazy_src)"
                     :alt = "item.alt"
                     max-height="200"
                     contain
@@ -44,8 +44,8 @@
 
 
 <script>
-import groupData from '../../static/group_data.json'
-import photoData from '../../static/photo_data.json'
+import groupData from '@/assets/group_data.json'
+import photoData from '@/assets/photo_data.json'
 
 var get_group_data = function (group_id) {
   return groupData.find(v => v.group_id == group_id)

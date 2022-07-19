@@ -5,8 +5,8 @@
         <v-card class="pa-10">
           <keep-alive>
             <v-img
-              :src="photo_data.photo_src"
-              :lazy-src="photo_data.photo_lazy_src"
+              :src="require ('@/assets' + photo_data.photo_src)"
+              :lazy-src="require ('@/assets' + photo_data.photo_lazy_src)"
               :alt = "photo_data.alt"
               max-height="600"
               max-width="600"
@@ -35,8 +35,8 @@
 
 
 <script>
-import groupData from '../../static/group_data.json'
-import photoData from '../../static/photo_data.json'
+import groupData from '@/assets/group_data.json'
+import photoData from '@/assets/photo_data.json'
 
 
 var get_photo_data = function (photo_id) {

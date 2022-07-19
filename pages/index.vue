@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import groupData from '../static/group_data.json'
-import photoData from '../static/photo_data.json'
+import groupData from '@/assets/group_data.json'
+import photoData from '@/assets/photo_data.json'
 
 export default {
   group_id: 'IndexPage',
@@ -56,10 +56,10 @@ export default {
   },
   methods: {
     search_photo_by_id(head_id) {
-      return (this.photo_list.find(v => v.photo_id === head_id)).photo_src
+      return (require ('@/assets' + (this.photo_list.find(v => v.photo_id === head_id)).photo_src))
     },
     search_lazy_photo_by_id(head_id) {
-      return (this.photo_list.find(v => v.photo_id === head_id)).photo_lazy_src
+      return (require ('@/assets' + (this.photo_list.find(v => v.photo_id === head_id)).photo_lazy_src))
     }
   }
 }
