@@ -56,10 +56,10 @@ export default {
   },
   methods: {
     search_photo_by_id(head_id) {
-      return (require ('@/assets' + (this.photo_list.find(v => v.photo_id === head_id)).photo_src))
+      return (this.photo_list.find(v => v.photo_id === head_id)).photo_src
     },
     search_lazy_photo_by_id(head_id) {
-      return (require ('@/assets' + (this.photo_list.find(v => v.photo_id === head_id)).photo_lazy_src))
+      return (this.photo_list.find(v => v.photo_id === head_id)).photo_lazy_src
     }
   }
 }

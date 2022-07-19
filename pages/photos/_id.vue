@@ -5,8 +5,8 @@
         <v-card class="pa-10">
           <keep-alive>
             <v-img
-              :src="require ('@/assets' + photo_data.photo_src)"
-              :lazy-src="require ('@/assets' + photo_data.photo_lazy_src)"
+              :src="photo_data.photo_src"
+              :lazy-src="photo_data.photo_lazy_src"
               :alt = "photo_data.alt"
               max-height="600"
               max-width="600"

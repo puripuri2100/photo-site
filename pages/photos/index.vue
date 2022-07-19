@@ -12,8 +12,8 @@
         <v-row justify="center" align="center">
           <keep-alive>
             <v-img
-              :src="require ('@/assets' + item.photo_src)"
-              :lazy-src="require ('@/assets' + item.photo_src)"
+              :src="item.photo_src"
+              :lazy-src="item.photo_src"
               :alt = "item.alt"
               max-height="200"
               contain
